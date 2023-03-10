@@ -1,0 +1,30 @@
+<h1>Hello Word</h1>
+testing
+<%= @test %>
+
+<%= link_to 'Click here to create new task', new_task_path %>
+
+<table>
+    <thead>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <hr>
+    </thead>
+    <tbody>
+        <% @tasks.each do |task| %>
+            <tr>
+                <th><%= task.id %></th>
+                <th><%= link_to task.title, task_path(task) %></th>
+                <th><%= task.description %></th>
+                <th><%= link_to "edit - #{task.id}", edit_task_path(task) %></th>
+                <th><%= link_to 'delete', task_path(task), method: :delete %></th>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+Total record: <%= @tasks.count %>
+
+    

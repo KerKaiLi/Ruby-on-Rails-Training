@@ -1,0 +1,7 @@
+<h1>New Subtask</h1>
+<%= simple_form_for [@task, @subtask] do |f| %>
+  <%= f.input :User_Story %>
+  <%= f.input :Story_Point %>
+  <%= f.input :Status %>
+  <%= f.button :submit %>
+<% end %>

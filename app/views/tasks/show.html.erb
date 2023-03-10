@@ -1,0 +1,28 @@
+<h1> This is the Show Page </h1>
+<h3><%= @task.title %></h3>
+<h4><%= @task.description %></h4>
+<p>
+<%= link_to 'Add subtask', new_task_subtasks_path(@task) %>
+</p>
+<p>
+<%= link_to "Index Page", tasks_path %>
+<p>
+
+<table>
+    <thead>
+        <th>#</th>
+        <th>User Story</th>
+        <th>Story Points</th>
+        <th>Status</th>
+    <thead>
+    <tbody>
+    <% @task.subtasks.each do |task| %>
+        <tr>
+            <td><%= task.id %></td>
+            <td><%= task.user_story %></td>
+            <td><%= task.story_points %></td>
+            <td><%= task.status %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>

@@ -1,0 +1,7 @@
+<h1>New Subtask</h1>
+<%= simple_form_for [@task, @subtask] do |f| %>
+  <%= f.input :user_story %>
+  <%= f.input :story_points, as: :float %>
+  <%= f.input :status, collection: ["Pending", "In Development", "Completed"] %>
+  <%= f.button :submit %>
+<% end %>
